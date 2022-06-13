@@ -1,15 +1,18 @@
 //
-//  ViewController.swift
+//  SheetView.swift
 //  TimeOffApp
 //
-//  Created by Thaynara da Silva Andrade on 02/06/22.
+//  Created by Robson Lima Lopes on 13/06/22.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class SheetViewController: UIViewController {
     
-    @IBOutlet weak var addActivity: UIButton!
+    
+    @IBAction func timePicker(_ sender: UIDatePicker) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +20,4 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
 }
-
