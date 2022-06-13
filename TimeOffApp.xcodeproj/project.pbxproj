@@ -17,6 +17,8 @@
 		4900C3352848F6890062CA9B /* TimeOffAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C3342848F6890062CA9B /* TimeOffAppTests.swift */; };
 		4900C33F2848F6890062CA9B /* TimeOffAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C33E2848F6890062CA9B /* TimeOffAppUITests.swift */; };
 		4900C3412848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C3402848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift */; };
+		FE3AC82C28538D1B009CA31B /* MyCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3AC82B28538D1B009CA31B /* MyCustom.swift */; };
+		FEAF79672854E59400D7DD3B /* MenuActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF79662854E59400D7DD3B /* MenuActivities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4900C33A2848F6890062CA9B /* TimeOffAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeOffAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4900C33E2848F6890062CA9B /* TimeOffAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOffAppUITests.swift; sourceTree = "<group>"; };
 		4900C3402848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOffAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FE3AC82B28538D1B009CA31B /* MyCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustom.swift; sourceTree = "<group>"; };
+		FEAF79662854E59400D7DD3B /* MenuActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActivities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,9 @@
 		4900C3192848F6860062CA9B /* TimeOffApp */ = {
 			isa = PBXGroup;
 			children = (
-				4900C31A2848F6860062CA9B /* AppDelegate.swift */,
-				4900C31C2848F6860062CA9B /* SceneDelegate.swift */,
+				FEAF79652854E4BB00D7DD3B /* Model */,
 				4900C31E2848F6860062CA9B /* ViewController.swift */,
+				FE3AC82B28538D1B009CA31B /* MyCustom.swift */,
 				4900C3202848F6870062CA9B /* Main.storyboard */,
 				4900C3262848F6890062CA9B /* Assets.xcassets */,
 				4900C3282848F6890062CA9B /* LaunchScreen.storyboard */,
@@ -128,6 +132,16 @@
 				4900C3402848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift */,
 			);
 			path = TimeOffAppUITests;
+			sourceTree = "<group>";
+		};
+		FEAF79652854E4BB00D7DD3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4900C31A2848F6860062CA9B /* AppDelegate.swift */,
+				4900C31C2848F6860062CA9B /* SceneDelegate.swift */,
+				FEAF79662854E59400D7DD3B /* MenuActivities.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +212,7 @@
 				TargetAttributes = {
 					4900C3162848F6860062CA9B = {
 						CreatedOnToolsVersion = 13.4;
+						LastSwiftMigration = 1340;
 					};
 					4900C32F2848F6890062CA9B = {
 						CreatedOnToolsVersion = 13.4;
@@ -262,8 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4900C31F2848F6860062CA9B /* ViewController.swift in Sources */,
+				FEAF79672854E59400D7DD3B /* MenuActivities.swift in Sources */,
 				4900C31B2848F6860062CA9B /* AppDelegate.swift in Sources */,
 				4900C3252848F6870062CA9B /* TimeOffApp.xcdatamodeld in Sources */,
+				FE3AC82C28538D1B009CA31B /* MyCustom.swift in Sources */,
 				4900C31D2848F6860062CA9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3S22856DS9;
@@ -457,6 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = swift.TimeOffApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -467,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3S22856DS9;
