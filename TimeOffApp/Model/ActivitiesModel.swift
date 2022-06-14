@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Activities{
+struct ActivitiesModel{
     static var myActivities: [Activity] = []
     
     static func addActivity(_ activity: Activity){
         self.myActivities.append(activity)
+        self.sortActivities()
     }
     
     static func sortActivities(){
@@ -25,14 +26,14 @@ struct Activities{
         if let randomElement = self.myActivities.randomElement() {
             return randomElement
         }else{
-            return Activity(name: "", time: 0, duration: 0)
+            return Activity(name: "", time: "", duration: 0)
         }
     }
     
 }
 
 struct Activity{
-    let name: String
-    let time: Double
-    let duration: Int
+    var name: String = ""
+    var time: String = ""
+    var duration: Int = 0
 }
