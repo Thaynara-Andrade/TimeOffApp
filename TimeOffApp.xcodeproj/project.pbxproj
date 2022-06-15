@@ -17,6 +17,8 @@
 		4900C3352848F6890062CA9B /* TimeOffAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C3342848F6890062CA9B /* TimeOffAppTests.swift */; };
 		4900C33F2848F6890062CA9B /* TimeOffAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C33E2848F6890062CA9B /* TimeOffAppUITests.swift */; };
 		4900C3412848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C3402848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift */; };
+		FEAF79672854E59400D7DD3B /* ActivitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF79662854E59400D7DD3B /* ActivitiesModel.swift */; };
+		FEC06A9C28576329003455E7 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC06A9B28576329003455E7 /* SheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4900C33A2848F6890062CA9B /* TimeOffAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeOffAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4900C33E2848F6890062CA9B /* TimeOffAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOffAppUITests.swift; sourceTree = "<group>"; };
 		4900C3402848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOffAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FEAF79662854E59400D7DD3B /* ActivitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesModel.swift; sourceTree = "<group>"; };
+		FEC06A9B28576329003455E7 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,10 @@
 		4900C3192848F6860062CA9B /* TimeOffApp */ = {
 			isa = PBXGroup;
 			children = (
-				4900C31A2848F6860062CA9B /* AppDelegate.swift */,
-				4900C31C2848F6860062CA9B /* SceneDelegate.swift */,
+				FEC06A9D2858AF2F003455E7 /* Utilities */,
+				FEAF79652854E4BB00D7DD3B /* Model */,
 				4900C31E2848F6860062CA9B /* ViewController.swift */,
+				FEC06A9B28576329003455E7 /* SheetViewController.swift */,
 				4900C3202848F6870062CA9B /* Main.storyboard */,
 				4900C3262848F6890062CA9B /* Assets.xcassets */,
 				4900C3282848F6890062CA9B /* LaunchScreen.storyboard */,
@@ -128,6 +133,23 @@
 				4900C3402848F6890062CA9B /* TimeOffAppUITestsLaunchTests.swift */,
 			);
 			path = TimeOffAppUITests;
+			sourceTree = "<group>";
+		};
+		FEAF79652854E4BB00D7DD3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEAF79662854E59400D7DD3B /* ActivitiesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEC06A9D2858AF2F003455E7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4900C31A2848F6860062CA9B /* AppDelegate.swift */,
+				4900C31C2848F6860062CA9B /* SceneDelegate.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +220,7 @@
 				TargetAttributes = {
 					4900C3162848F6860062CA9B = {
 						CreatedOnToolsVersion = 13.4;
+						LastSwiftMigration = 1340;
 					};
 					4900C32F2848F6890062CA9B = {
 						CreatedOnToolsVersion = 13.4;
@@ -262,8 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4900C31F2848F6860062CA9B /* ViewController.swift in Sources */,
+				FEAF79672854E59400D7DD3B /* ActivitiesModel.swift in Sources */,
 				4900C31B2848F6860062CA9B /* AppDelegate.swift in Sources */,
 				4900C3252848F6870062CA9B /* TimeOffApp.xcdatamodeld in Sources */,
+				FEC06A9C28576329003455E7 /* SheetViewController.swift in Sources */,
 				4900C31D2848F6860062CA9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3S22856DS9;
@@ -447,6 +473,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,8 +484,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = swift.TimeOffApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3S22856DS9;
@@ -475,6 +504,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -486,7 +516,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
