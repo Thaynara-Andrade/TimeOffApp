@@ -48,10 +48,16 @@ class SheetViewController: UIViewController{
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
     
     @IBAction func timePickerAction(_ sender: UIDatePicker) {
         let date = timePicker.date
         myActivity.time = ActivitiesModel.timeFormat(date)
+        SaveButton.isEnabled = isComplete
         
         print(myActivity.time)
     }
@@ -81,17 +87,26 @@ class SheetViewController: UIViewController{
         sender.endEditing(true)
     }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     @IBAction func SaveButtonAction(_ sender: UIButton) {
         if isComplete{
             ActivitiesModel.addActivity(myActivity)
+            self.dismiss(animated: true)
             print(ActivitiesModel.myActivities)
         }
     }
     
 }
 
-extension UIViewController: UITextFieldDelegate{
+extension SheetViewController: UITextFieldDelegate{
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        SaveButton.isEnabled = isComplete
+    }
+    
     public func textField(
         _ textField: UITextField,
         shouldChangeCharactersIn range: NSRange,
