@@ -28,7 +28,17 @@ class SheetViewController: UIViewController{
     @IBOutlet weak var notifySwitch: UISwitch!
     
     
-    var myActivity = Activity()
+    var myActivity: Activity = Activity()
+    
+    var isComplete: Bool{
+        !myActivity.name.isEmpty &&
+        !myActivity.time.isEmpty &&
+        myActivity.duration > 0
+    }
+    
+    var isNameTextFieldCountLessThan30: Bool{
+        NameTextField.text!.count<30
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +51,7 @@ class SheetViewController: UIViewController{
     
     @IBAction func timePickerAction(_ sender: UIDatePicker) {
         let date = timePicker.date
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        
-        let time = dateFormatter.string(from: date)
-        
-        myActivity.time = time
+        myActivity.time = ActivitiesModel.timeFormat(date)
         
         print(myActivity.time)
     }
@@ -55,11 +59,8 @@ class SheetViewController: UIViewController{
     
     @IBAction func nameTextFieldAction(_ sender: UITextField) {
         
-        print(#function)
-        
-        if NameTextField.text!.count<30{
+        if isNameTextFieldCountLessThan30{
             myActivity.name = NameTextField.text!
-            
         }
         print(myActivity.name)
         
@@ -88,30 +89,34 @@ class SheetViewController: UIViewController{
         }
     }
     
-    var isComplete: Bool{
-        !myActivity.name.isEmpty &&
-        !myActivity.time.isEmpty &&
-        myActivity.duration > 0
-    }
-    
 }
 
 extension UIViewController: UITextFieldDelegate{
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
-                            replacementString string: String) -> Bool
-    {
-        let maxLength: Int
-        
-        if textField.keyboardType == .numberPad{
-            maxLength = 3
-        }else{
-            maxLength = 15
-        }
+    public func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool{
         
         let currentString: NSString = textField.text! as NSString
         let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
         
-        return newString.length <= maxLength
+        let isNewStringLengthLessThanLimitLenght: Bool = newString.length <= limitLength(textField.keyboardType)
+        
+        return isNewStringLengthLessThanLimitLenght
+    }
+    
+    func limitLength(_ keyboardType: UIKeyboardType)->Int{
+        let maxLength: Int
+
+        switch keyboardType{
+        case .numberPad:
+            maxLength = 3
+        default:
+            maxLength = 15
+        }
+        
+        return maxLength
     }
     
 }

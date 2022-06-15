@@ -30,6 +30,15 @@ struct ActivitiesModel{
         }
     }
     
+    static func timeFormat(_ date: Date)->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        let time = dateFormatter.string(from: date)
+        
+        return time
+    }
+    
 }
 
 struct Activity{
