@@ -30,6 +30,8 @@ class SheetViewController: UIViewController{
     
     var myActivity: Activity = Activity()
     
+    var onDismiss: (() -> Void)?
+    
     var isComplete: Bool{
         !myActivity.name.isEmpty &&
         !myActivity.time.isEmpty &&
@@ -94,6 +96,7 @@ class SheetViewController: UIViewController{
     @IBAction func SaveButtonAction(_ sender: UIButton) {
         if isComplete{
             ActivitiesModel.addActivity(myActivity)
+            onDismiss?()
             self.dismiss(animated: true)
             print(ActivitiesModel.myActivities)
         }

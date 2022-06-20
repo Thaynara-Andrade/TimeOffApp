@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3662012E285A1AC0006C7AE2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662012D285A1AC0006C7AE2 /* CustomCell.swift */; };
 		4900C31B2848F6860062CA9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C31A2848F6860062CA9B /* AppDelegate.swift */; };
 		4900C31D2848F6860062CA9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C31C2848F6860062CA9B /* SceneDelegate.swift */; };
 		4900C31F2848F6860062CA9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900C31E2848F6860062CA9B /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3662012D285A1AC0006C7AE2 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		4900C3172848F6860062CA9B /* TimeOffApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeOffApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4900C31A2848F6860062CA9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4900C31C2848F6860062CA9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				FEC06A9D2858AF2F003455E7 /* Utilities */,
 				FEAF79652854E4BB00D7DD3B /* Model */,
 				4900C31E2848F6860062CA9B /* ViewController.swift */,
+				3662012D285A1AC0006C7AE2 /* CustomCell.swift */,
 				FEC06A9B28576329003455E7 /* SheetViewController.swift */,
 				4900C3202848F6870062CA9B /* Main.storyboard */,
 				4900C3262848F6890062CA9B /* Assets.xcassets */,
@@ -289,6 +292,7 @@
 				4900C31B2848F6860062CA9B /* AppDelegate.swift in Sources */,
 				4900C3252848F6870062CA9B /* TimeOffApp.xcdatamodeld in Sources */,
 				FEC06A9C28576329003455E7 /* SheetViewController.swift in Sources */,
+				3662012E285A1AC0006C7AE2 /* CustomCell.swift in Sources */,
 				4900C31D2848F6860062CA9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

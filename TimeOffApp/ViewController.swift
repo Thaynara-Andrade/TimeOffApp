@@ -18,7 +18,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        activitiesTable.delegate = self
+        activitiesTable.dataSource = self
+        activitiesTable.separatorStyle = .none
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! SheetViewController
+        controller.onDismiss = {
+            self.activitiesTable.reloadData()
+        }
     }
     
     @IBAction func drawNewActivity(_ sender: UIBarButtonItem) {
@@ -35,3 +48,25 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UITableViewDelegate {
+    
+}
+
+extension ViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfSections = ActivitiesModel.myActivities.count
+        return numberOfSections
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = activitiesTable.dequeueReusableCell(withIdentifier: "customCell") as! CustomCell
+        let activity = ActivitiesModel.myActivities[indexPath.row]
+        
+        cell.nameLabel.text = activity.name
+        cell.timeLabel.text = activity.time
+        
+        return cell
+
+    }
+}
