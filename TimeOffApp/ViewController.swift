@@ -69,4 +69,18 @@ extension ViewController: UITableViewDataSource{
         return cell
 
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return.delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            ActivitiesModel.myActivities.remove(at: indexPath.row)
+            tableView.deleteRows(at:[indexPath], with: .fade)
+            tableView.endUpdates()
+            tableView.reloadData()
+        }
+    }
 }
