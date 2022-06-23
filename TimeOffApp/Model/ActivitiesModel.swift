@@ -41,8 +41,10 @@ struct ActivitiesModel{
     
 }
 
-struct Activity{
+struct Activity: Equatable {
     var name: String = ""
     var time: String = ""
     var duration: Int = 0
+    
+    
 }

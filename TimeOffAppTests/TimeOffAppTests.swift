@@ -11,26 +11,38 @@ import XCTest
 class TimeOffAppTests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        ActivitiesModel.myActivities = []
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        ActivitiesModel.myActivities = []
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testAddActivitiesShouldIncreaseMyActivitiesCount() {
+        let activity = Activity(name: "Teste", time: "22-03-2022", duration: 120)
+        ActivitiesModel.addActivity(activity)
+        XCTAssertEqual(ActivitiesModel.myActivities.count, 1)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testSortActivitesShouldReturnActivity2First() {
+        let activity = Activity(name: "Teste", time: "22-03-2022", duration: 120)
+        let activity2 = Activity(name: "Teste 2", time: "21-03-2022", duration: 120)
+        ActivitiesModel.addActivity(activity)
+        ActivitiesModel.addActivity(activity2)
+        ActivitiesModel.sortActivities()
+        let output = ActivitiesModel.myActivities.first
+        XCTAssertEqual(output, activity2)
+    }
+    
+    func testTimeFormatShouldReturn14h55() {
+        let date = Date()
+        guard let addedDate = Calendar.current.date(bySetting: .hour, value: 14, of: date),
+              let finalDate = Calendar.current.date(bySetting: .minute, value: 55, of: addedDate) else {
+                  XCTFail()
+                  return
+              }
+        let output = ActivitiesModel.timeFormat(finalDate)
+        XCTAssertEqual(output, "14:55")
     }
 
 }
